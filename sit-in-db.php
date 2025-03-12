@@ -9,13 +9,15 @@
         $sessions = $_SESSION['sessions'];
         $purpose = $_POST['purpose'];
         $labs = $_POST['labs'];
-        $date = $_POST['date_sit_in'];
+
 
         $sessions--;
         $date = date('y-m-d');
+        date_default_timezone_set("America/New_York");
+        $login_date = date("h:i:sa");
 
         $query = "UPDATE userstbl
-                  SET purpose = '$purpose', labs = '$labs', sessions = '$sessions, date_sit_in = $date'
+                  SET purpose = '$purpose', labs = '$labs', sessions = '$sessions', date_login = '$date', login_date = '$login_date'
                   WHERE idno = '$idno'";
         $result = mysqli_query($connection, $query);
 
@@ -23,7 +25,8 @@
             $_SESSION['sessions'] = $sessions;
             $_SESSION['purpose'] = $purpose;
             $_SESSION['labs'] = $labs;
-            $_SESSION['date_sit_in'] = $date;
+            $_SESSION['date'] = $date;
+            $_SESSION['login_date'] = $login_date;
 
             header('location:admindashboard.php?idnum'. $idno);
         }else{

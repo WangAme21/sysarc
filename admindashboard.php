@@ -116,6 +116,9 @@
 <div class="modal-container-reservation" id="sit-in" style="display:none">
     <div class="modal-content-reservation">
         <form action="sit-in-db.php" method="post">
+            <div class="reservation-btn" id="reservation-btn">
+                <input onclick="reservationClosebtn()" type="button" value="X">
+            </div>
             <h1>Sit-in Form</h1>
                 
                     <label>ID Number:</label>
@@ -193,14 +196,16 @@
         <div class="student-info">
             <label>Announcement</label>
         </div>
-        <!-- Display current announcement -->
+        
         <h4>CCS Admin | <?php echo date("Y-m-d") ?></h4>
         <p></p>
 
-        <form action="" method="">
+        <form action="announcementdb.php" method="">
             <h4>Edit Announcement</h4>
-            <textarea name="" rows="4" cols="50"></textarea><br>
-            <button type="submit" name="t">Update Announcement</button>
+            <div class="announcement-form" >
+                <textarea style="resize: none" name="" rows="4" cols="50"></textarea><br>
+                <button type="submit" name="update_announcement">Update Announcement</button>
+            </div>
         </form>
     </div>
 </div>
@@ -219,6 +224,13 @@
     const searchContainer = document.getElementById('search-container');
     const searchbg = document.getElementById('search-bg');
     const searchClosebtn = document.getElementById('search-closebtn');
+    const reservationBtn = document.getElementById('reservation-btn');
+
+    function reservationClosebtn(){
+        reservationBtn.addEventListener("click", ()=>{
+            sitIn.style.display = "none";
+        });
+    }
 
     function searchclosebtn(){
         searchClosebtn.addEventListener("click", ()=> {

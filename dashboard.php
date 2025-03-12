@@ -17,7 +17,7 @@
     <h1>Dashboard</h1>
     <div class="menu-icon" id="menu-icon">☰</div>
     <div class="nav-links" id="nav-links">
-        <a href="#"> Notification</a>
+        <a href=""> Notification</a>
         <a id="home-nav" href="#"> Home</a>
         <a href="editprofile.php"> Edit Profile</a>
         <a href="#"> History</a>

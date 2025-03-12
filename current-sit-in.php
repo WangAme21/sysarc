@@ -53,12 +53,17 @@
                         $lastname = $row['lastname'];
                         $purpose = $row['purpose'];
                         $labs = $row['labs'];  
+                        $date = $row['date_login'];
+                        $login_date = $row['login_date'];
                         echo ' 
                         <tr>
                             <td>'.$idno.'</th>
                             <td>'.$firstname.' '.$lastname.'</th>
                             <td>'.$purpose.'</th>
                             <td>'.$labs.'</td>
+                            <td>'.$login_date.'</td>
+                            <td></td>
+                            <td>'.$date.'</td>
                         </tr>';
                     }
                 }
